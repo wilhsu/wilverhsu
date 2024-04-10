@@ -84,3 +84,8 @@ body{
     margin-right: auto;
     margin-left: auto;
 }
+
+.projThumb:hover ~ .projTitle {
+    color: blue;
+    
+}
