@@ -153,6 +153,7 @@ body{
         flex-direction: row;
         height: 120vh;
         width: 100vw;
+        overflow-y: hidden;
     }
     .imgCont img{
         width: 100%;
@@ -163,6 +164,7 @@ body{
         padding: 20px;
         width: 93vw;
         padding-bottom: 50px;
+        overflow-x: hidden;
         /* justify-content: center; */
     }
 
