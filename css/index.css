@@ -147,9 +147,7 @@ body{
     }
 
     .bodyText{
-        padding: 0;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
         width: 90vw;
         /* justify-content: center; */
     }
