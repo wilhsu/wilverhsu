@@ -134,7 +134,16 @@ body{
     overflow: hidden;
 }
 
-@media only screen and (max-width: 600px) {
+.backButton{
+    color: white;
+    text-decoration: none;
+}
+
+.additionalInfo{
+    color: rgb(107, 107, 107);
+}
+
+@media only screen and (max-width: 800px) {
     .contentCont{
         flex-direction: column;
         justify-content: center;
@@ -145,10 +154,15 @@ body{
         height: 120vh;
         width: 100vw;
     }
+    .imgCont img{
+        width: 100%;
+        height: 100%;
+    }
 
     .bodyText{
         padding: 20px;
-        width: 90vw;
+        width: 93vw;
+        padding-bottom: 50px;
         /* justify-content: center; */
     }
   }
