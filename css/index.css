@@ -165,4 +165,8 @@ body{
         padding-bottom: 50px;
         /* justify-content: center; */
     }
+
+    .footer{
+        text-align: center;
+    }
   }
