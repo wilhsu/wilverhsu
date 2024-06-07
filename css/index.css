@@ -143,6 +143,54 @@ body{
     color: rgb(107, 107, 107);
 }
 
+.bigContMisc{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.contentContMisc{
+    display: flex;
+    flex-direction: row;
+    /* padding-top: 100px; */
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.contentContMisc::-webkit-scrollbar {
+    display: none;
+}
+
+.projMisc{
+    display: flex;
+    flex-direction: column;
+
+    /* overflow-x: scroll; */
+}
+
+
+
+.imgMisc{
+    height: 75vh;
+    /* width: 100%; */
+    width: auto;
+    margin-top: 5vh;
+}
+
+.textMisc{
+    width: auto;
+    height: 13vh;
+    color: white;
+    padding-top: 2vh;
+    padding-left: 1vw;
+    /* padding-top: 10px; */
+    margin-bottom: 5vh;
+}
+
+
 @media only screen and (max-width: 800px) {
     .contentCont{
         flex-direction: column;
