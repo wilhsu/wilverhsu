@@ -21,11 +21,39 @@ body{
 }
 
 .header{
-    max-width: 100%;
-    overflow: hidden;
+    padding: 1px;
+    color: black;
 }
 
-.marquee {
+.marquee{
+    overflow: clip;
+}
+
+.marquee-content{
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-content p{
+    margin: 0px;
+}
+
+.marquee-content:hover{
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    to{
+        transform: translateX(-33.3333%);
+    }
+}
+
+
+
+/* .marquee {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
@@ -44,7 +72,7 @@ body{
     100% {
       transform: translate3d(-50%, 0, 0);
     }
-  }
+  } */
 
 .footer{
     bottom:0;
