@@ -139,7 +139,7 @@ body{
     text-decoration: none;
 }
 
-.additionalInfo{
+.additionalInfo, #miscDesc{
     color: rgb(107, 107, 107);
 }
 
@@ -170,8 +170,6 @@ body{
 
     /* overflow-x: scroll; */
 }
-
-
 
 .imgMisc{
     height: 75vh;
