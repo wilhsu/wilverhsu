@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                background-image: linear-gradient(white, rgb(193, 193, 193), white, white, rgb(211, 211, 211), white);
+                overflow: hidden;
+            }
+
+            .text{
+                font-family: 'globular';
+                font-size: 30px;
+                filter: blur(10px);
+
+                padding: 20px;
+
+            }
+
+            .text:hover{
+                filter: blur(0px);
+                transition: ease-in-out 1s;
+            }
+
+            #title{
+                font-size: 220px;
+                text-align: center;
+                bottom: 0;
+
+            }
+
+            #text-input{
+                font-family: 'globular';
+                font-size: 100px;
+                /* text-align: center; */
+                position: relative;
+                /* position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%; */
+            }
+
+            .run-animation{
+                animation: fadeout 1.8s ease-in-out forwards;
+                animation-play-state: paused;
+            }
+
+            @keyframes fadeout{
+                from{ filter: blur(0px); opacity: 1;}
+                to{ filter: blur(30px); opacity: 0;}
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="main">
+            <!-- <div class="text" id="title">Globular Regular</div> -->
+            <div class="run-animation" id="text-input"></div>
+            <!-- <div class="text">Globular Regular is a typeface inspired by the subtle and organic trajectory of liquid forms pulled by gravity. Initially inspired by foams and trails left behind from cleaning products—how the idiosyncratic streaks of white seem to have a mind of their own—to the ubiquitous sightings of dried trails of graffiti and the history of gravity’s grasp on the paint.
+                The structure of the characters mimic the contrasting thickness of lines that represent obscure boundaries between liquid and gas. The weight of the glyphs are emphasized by the instinctual assumptions of gravity, seemingly dragging the bulbous forms in an organically fluid dynamic.
+                The type specimen for this typeface is a frosted pane of glass, a reference to the inspiration of liquid forms and cleaning products. The translucent and transparent contrast on the glass also further accentuates the fluidity of this typeface, as they visually represent the blurred boundaries between liquid and gas.
+            </div> -->
+            <!-- <div class="text">Globular Regular</div>
+            <div class="text">Globular Regular</div>
+            <div class="text">Globular Regular</div> -->
+
+
+        </div>
+        
+        <script>
+            let textInput = document.getElementById("text-input");
+
+            document.addEventListener('keydown', function(e){
+                e.preventDefault;
+                textInput.classList.remove("run-animation");
+                void textInput.offsetWidth;
+                textInput.classList.add("run-animation");
+
+                let randX = Math.floor((Math.random()*window.innerWidth));
+                let randY = Math.floor((Math.random()*window.innerHeight));
+
+                // let wW = window.innerWidth;
+
+                // console.log();
+
+                textInput.style.left = `${randX}px`;
+                textInput.style.top = `${randY}px`;
+
+                console.log('this key works:', e.key);
+                textInput.innerHTML = e.key;
+                textInput.style.animationPlayState = "running";
+                  // Remove the class temporarily to reset the animation
+            }, false);
+
+        </script>
+    </body>
+</html>

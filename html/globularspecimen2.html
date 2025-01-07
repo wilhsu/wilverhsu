@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                background-image: url(../assets/P005globular/dew.gif);
+                background-repeat: no-repeat;
+                background-size: cover;
+                /* filter: blur(10px); */
+                /* background-image: linear-gradient(white, rgb(193, 193, 193), white, white, rgb(211, 211, 211), white); */
+                overflow: hidden;
+            }
+
+            .text-input{
+                font-family: 'globular';
+                font-size: 100px;
+                position: absolute;
+                /* mix-blend-mode:overlay; */
+                padding: 10px;
+                color: white;
+                opacity: 0.75;
+            }
+
+            #instructions{
+                color: white;
+                opacity: .75;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 26px;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                text-align: center;
+            }
+
+            .run-animation{
+                animation: fadeout 18s ease-in-out forwards;
+                animation-play-state: running;
+            }
+
+            @keyframes fadeout{
+                from{ filter: blur(0px); opacity: 1;}
+                to{ filter: blur(30px); opacity: 0;}
+            }
+
+            #main {
+                position: relative;  /* Ensure children use this as the reference point */
+                width: 100%;
+                height: 100%;
+                overflow: hidden;  /* Prevents the overflow of text divs beyond the screen */
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="main">
+            <div id="instructions">Globlar Regular is a typeface designed by William Hsu in 2023, meant to mimic the nuanced boundaries between liquid and gas. <br><br>press keys to see glyphs</div>
+            <div class="run-animation" id="text-input"></div>
+
+
+        </div>
+        
+        <script>
+            let mainDiv = document.getElementById("main");
+
+            document.addEventListener('keydown', function(e) {
+                // Hide the instructions text
+                document.querySelector("#instructions").style.opacity = "0";
+
+                // Create a new div for the pressed key
+                let addTextDiv = document.createElement("div");
+                addTextDiv.classList.add("text-input");
+
+                // Prevent the default action for the keypress
+                e.preventDefault();
+
+                // Remove the animation class to restart animation
+                addTextDiv.classList.remove("run-animation");
+                void addTextDiv.offsetWidth; // Force reflow to reset animation
+                addTextDiv.classList.add("run-animation");
+
+                // Append the new div to the main container
+                mainDiv.appendChild(addTextDiv);
+
+                // Get the width and height of the newly created div
+                let divWidth = addTextDiv.offsetWidth;
+                let divHeight = addTextDiv.offsetHeight;
+
+                // Get the width and height of the window
+                let windowWidth = document.documentElement.clientWidth;
+                let windowHeight = document.documentElement.clientHeight;
+
+                // Calculate random positions, ensuring the div stays within the viewport
+                let randX = Math.floor(Math.random() * (windowWidth - divWidth));
+                let randY = Math.floor(Math.random() * (windowHeight - divHeight));
+
+                // Set the random position of the div
+                addTextDiv.style.left = `${randX}px`;
+                addTextDiv.style.top = `${randY}px`;
+
+                // Set the text of the div to the key pressed
+                addTextDiv.innerHTML = e.key;
+
+                console.log('This key works:', e.key);
+
+                let fontSizeIncrement = 50;
+                let maxFontSize = 600;
+
+                let currentFontSize = window.getComputedStyle(addTextDiv).fontSize;
+                let fontSizeNumber = parseInt(currentFontSize, 10);  
+
+                // Check if the font size exceeds the maxFontSize
+                if (fontSizeNumber + fontSizeIncrement > maxFontSize) {
+                    // If it exceeds the limit, reset to the initial font size (300px or your starting value)
+                    addTextDiv.style.fontSize = "100px";  // Reset to the initial font size
+                } else {
+                    // If it doesn't exceed, increase the font size
+                    let newFontSize = fontSizeNumber + fontSizeIncrement + 'px';  // Add 10px to the font size
+                    addTextDiv.style.fontSize = newFontSize;
+                    console.log(newFontSize);
+                }
+
+                console.log('New font size:', addTextDiv.style.fontSize);
+                
+
+            }, false);
+
+
+            // let mainDiv = document.getElementById("main");
+            // // let textInput = document.getElementById("text-input");
+
+            // document.addEventListener('keydown', function(e){
+            //     document.querySelector("#instructions").style.opacity = "0";
+
+            //     let addTextDiv = document.createElement("div");
+            //     // document.querySelector("#main").appendChild(addTextDiv);
+            //     addTextDiv.classList.add("text-input");
+                
+
+            //     e.preventDefault;
+            //     addTextDiv.classList.remove("run-animation");
+            //     void addTextDiv.offsetWidth;
+            //     addTextDiv.classList.add("run-animation");
+
+            //     // Get the width and height of the newly created div
+            //     let divWidth = addTextDiv.offsetWidth;
+            //     let divHeight = addTextDiv.offsetHeight;
+
+            //     // Get the window's width and height
+            //     let windowWidth = window.innerWidth;
+            //     let windowHeight = window.innerHeight;
+
+            //     // Calculate random positions but ensure div stays within the viewport
+            //     let randX = Math.floor(Math.random() * (windowWidth - divWidth));
+            //     let randY = Math.floor(Math.random() * (windowHeight - divHeight));
+
+
+            //     addTextDiv.style.left = `${randX}px`;
+            //     addTextDiv.style.top = `${randY}px`;
+
+            //     addTextDiv.innerHTML = e.key;
+            //     mainDiv.appendChild(addTextDiv);
+
+            //     console.log('this key works:', e.key);
+            // }, false);
+
+        </script>
+    </body>
+</html>
