@@ -11,6 +11,10 @@ body{
     overflow-x: hidden;
 }
 
+a:visited, :active{
+    color: white;
+}
+
 .header, .footer{
     position: fixed;
     background-color: white;
