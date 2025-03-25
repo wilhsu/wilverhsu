@@ -124,6 +124,7 @@ body{
 
 .footer{
     bottom:0;
+    height: auto;
     text-align: center;
 }
 
@@ -190,8 +191,8 @@ body{
     flex-direction: column;
     overflow-y: scroll;
     white-space: nowrap;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     position: sticky;
     top: 0px;
@@ -207,13 +208,16 @@ body{
 
 .imgCont img{
     padding: 5px;
+    height: 100%;
 }
 
 .contentCont{
     display: flex;
     flex-direction: row;
     /* padding-top: 100px; */
-    height: 100vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    height: 95vh;
     overflow: hidden;
 }
 
@@ -280,7 +284,7 @@ body{
 
     .imgCont{
         flex-direction: row;
-        height: 90vh;
+        height: 40vh;
         width: 100vw;
         overflow-y: hidden;
         
@@ -290,12 +294,13 @@ body{
         height: 100%; */
         height: 100%;
         object-fit: contain;
-        padding: 0;
+        padding: 5px;
     }
 
     .bodyText{
         padding: 20px;
         width: 93vw;
+        height: 60vh;
         padding-bottom: 50px;
         overflow-x: hidden;
         /* justify-content: center; */
