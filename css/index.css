@@ -242,8 +242,11 @@ body{
 .contentContMisc{
     display: flex;
     flex-direction: row;
-    /* padding-top: 100px; */
-    height: 100vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    height: 94vh;
+    width: auto;
+    /* width: 600vw; */
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -255,25 +258,66 @@ body{
 .projMisc{
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    width: auto;
 
     /* overflow-x: scroll; */
 }
 
-.imgMisc{
+/* .imgMiscCont{
     height: 75vh;
-    /* width: 100%; */
     width: auto;
-    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+} */
+
+.imgMiscCont{
+    /* height: 75vh; */
+    width: auto;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* flex-wrap: wrap; */
+    /* object-fit: cover; */
 }
+
+.imgMiscCont::-webkit-scrollbar {
+    display: none;
+}
+
+.imgMiscCont img{
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* .imgMisc{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+} */
+
+/* .imgMisc{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+} */
+
+/* .imgMisc img{
+    width: 100px;
+    height: 100px;
+} */
 
 .textMisc{
     width: auto;
-    height: 13vh;
+    height: 25vh;
     color: white;
     padding-top: 2vh;
     padding-left: 1vw;
     /* padding-top: 10px; */
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
 }
 
 
@@ -317,9 +361,22 @@ body{
         overflow-x: hidden;
     }
 
-    .imgMisc{
-        width: 100vw;
+    .imgMiscCont{
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .textMisc{
         height: auto;
+        padding-bottom: 20px;
+    }
+
+    .imgMisc{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     #pfp{
