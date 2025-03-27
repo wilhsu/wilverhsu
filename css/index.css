@@ -11,6 +11,10 @@ body{
     overflow-x: hidden;
 }
 
+#specLinks:link{
+    color: white;
+}
+
 #specLinks:visited{
     color: white;
 }
@@ -238,6 +242,7 @@ body{
 .bigContMisc{
     width: 100vw;
     height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
@@ -329,6 +334,9 @@ body{
     .contentCont{
         flex-direction: column;
         justify-content: center;
+        height: 95vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
     }
 
     .imgCont{
