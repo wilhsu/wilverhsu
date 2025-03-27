@@ -134,6 +134,7 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .projTitle{
@@ -176,6 +177,7 @@ body{
 .bodyText{
     color: white;
     width: 35vw;
+    height: auto;
     text-align: left;
     padding-left: 20px;
     padding-right: 55px;
@@ -214,10 +216,12 @@ body{
 
 .contentCont{
     display: flex;
+    position: fixed;
     flex-direction: row;
     /* padding-top: 100px; */
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
+    width: 100vw;
     height: 95vh;
     overflow: hidden;
 }
