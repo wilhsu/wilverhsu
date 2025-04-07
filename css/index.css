@@ -250,6 +250,7 @@ body{
 
 .contentContMisc{
     display: flex;
+    /* position: fixed; */
     flex-direction: row;
     padding-top: 3vh;
     padding-bottom: 3vh;
