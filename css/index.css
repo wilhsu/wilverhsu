@@ -218,6 +218,11 @@ body{
     /* height: 100%; */
 }
 
+.imgCont video{
+    padding: 5px;
+    /* height: 100%; */
+}
+
 .contentCont{
     display: flex;
     position: fixed;
