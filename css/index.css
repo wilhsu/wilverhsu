@@ -178,6 +178,11 @@ body{
     color: blue;
 } */
 
+.projThumb video{
+    width: 100%;
+    height: auto;
+}
+
 .bodyText{
     color: white;
     width: 35vw;
