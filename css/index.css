@@ -1,3 +1,14 @@
+/* 
+CURRENT COLOR PALETTE
+
+general background: black;
+header and footer (marquee) background: rgb (40, 40, 40);
+marquee text, body text: rgb (150, 150, 150);
+proj titles, links: rgb (200, 200, 200);
+additional info: rgb (80, 80, 80);
+
+*/
+
 @font-face{
     font-family: NimbusSans;
     src: url(../assets/fonts/NimbusSansNarrow-Regular.woff);
@@ -12,26 +23,26 @@ body{
 }
 
 #specLinks:link{
-    color: white;
+    color: rgb(200, 200, 200);
 }
 
 #specLinks:visited{
-    color: white;
+    color: rgb(200, 200, 200);
 }
 
 .header, .footer{
-    /* display: flex; */
     position: fixed;
-    background-color: white;
+    background-color: rgb(40, 40, 40);
     width: 100vw;
     z-index: 100000;
-    /* padding-left: 10px;
-    padding-right: 10px; */
+}
+
+.footer a:visited, :active, :link{
+    color: rgb(200, 200, 200);
 }
 
 .header{
     padding: 1px;
-    color: black;
     height: auto;
 }
 
@@ -42,6 +53,7 @@ body{
 }
 
 .marquee-content{
+    color: rgb(150, 150, 150);
     display: flex;
     gap: 10px;
     padding-left: 10px;
@@ -51,31 +63,6 @@ body{
 
 .marquee-content p{
     margin: 0px;
-}
-
-.dropdown-content{
-    /* margin-left: 20px; */
-    /* height: 80vh; */
-    /* margin: 10px; */
-    display: none;
-    opacity: 0;
-    transition: opacity 1s ease-out;
-    height: auto;
-    /* background-color: blue; */
-}
-
-.dropdown-grid{
-    margin: 0;
-    display: grid;
-    column-gap: 5px;
-    grid-template-columns: 5vw 40vw 30vw 10vw 15vw;
-    /* grid-auto-flow: row; */
-}
-
-.dropdown-grid > div{
-    color: black;
-    padding: 10px;
-    /* font-size: 50px; */
 }
 
 #aboutMe-link:visited, :active{
@@ -110,7 +97,7 @@ body{
 }
 
 
-.marquee:hover .dropdown-content{
+.marquee:hover{
     opacity: 1;
     display: block;
     height: auto;
@@ -128,6 +115,7 @@ body{
 }
 
 .footer{
+    color: rgb(150, 150, 150);
     bottom:0;
     height: auto;
     text-align: center;
@@ -143,7 +131,7 @@ body{
 
 .projTitle{
     /* display: none; */
-    color: white;
+    color: rgb(200, 200, 200);
     text-align: center;
     padding: 25px;
 }
@@ -184,7 +172,7 @@ body{
 }
 
 .bodyText{
-    color: white;
+    color: rgb(150, 150, 150);
     width: 35vw;
     height: auto;
     text-align: left;
@@ -241,12 +229,12 @@ body{
 }
 
 .backButton{
-    color: white;
+    color: rgb(150, 150, 150);
     text-decoration: none;
 }
 
 .additionalInfo, #miscDesc{
-    color: rgb(107, 107, 107);
+    color: rgb(80, 80, 80);
 }
 
 .bigContMisc{
@@ -333,7 +321,7 @@ body{
 .textMisc{
     width: auto;
     height: 35vh;
-    color: white;
+    color: rgb(150, 150, 150);
     /* padding-top: 2vh;
     padding-left: 1vw; */
     padding: 1vw;
