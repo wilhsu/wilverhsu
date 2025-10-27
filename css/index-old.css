@@ -1,0 +1,403 @@
+/* 
+CURRENT COLOR PALETTE
+
+general background: black;
+header and footer (marquee) background: rgb (40, 40, 40);
+marquee text, body text: rgb (150, 150, 150);
+proj titles, links: rgb (200, 200, 200);
+additional info: rgb (80, 80, 80);
+
+*/
+
+@font-face{
+    font-family: NimbusSans;
+    src: url(../assets/fonts/NimbusSansNarrow-Regular.woff);
+}
+
+body{
+    font-family: NimbusSans;
+    /* font-size: 24px; */
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+#specLinks:link{
+    color: rgb(200, 200, 200);
+}
+
+#specLinks:visited{
+    color: rgb(200, 200, 200);
+}
+
+.header, .footer{
+    position: fixed;
+    background-color: rgb(40, 40, 40);
+    width: 100vw;
+    z-index: 100000;
+}
+
+.footer a:visited, :active, :link{
+    color: rgb(200, 200, 200);
+}
+
+.header{
+    padding: 1px;
+    height: auto;
+}
+
+.marquee{
+    overflow: clip;
+    transition: height 3s;
+    margin: 0;
+}
+
+.marquee-content{
+    color: rgb(150, 150, 150);
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-content p{
+    margin: 0px;
+}
+
+#aboutMe-link:visited, :active{
+    color: black;
+    text-decoration: none;
+}
+
+#aboutMe-link:link{
+    color: black;
+    text-decoration: none;
+}
+
+#pfp{
+    width: 15vw;
+    height: auto;
+    /* display: block;
+    margin-right: auto;
+    margin-left: auto; */
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: pfpBlur 1.75s ease-in-out 1;
+}
+
+@keyframes pfpBlur {
+    from{
+        filter: brightness(10);
+    } to{
+        filter: brightness(1);
+    }
+}
+
+
+.marquee:hover{
+    opacity: 1;
+    display: block;
+    height: auto;
+    
+}
+
+.marquee-content:hover{
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    to{
+        transform: translateX(-33.3333%);
+    }
+}
+
+.footer{
+    color: rgb(150, 150, 150);
+    bottom:0;
+    height: auto;
+    text-align: center;
+}
+
+.bigCont{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.projTitle{
+    /* display: none; */
+    color: rgb(200, 200, 200);
+    text-align: center;
+    padding: 25px;
+}
+
+.thumbnails{
+    max-width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+.project{
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.project img{
+    width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* .projThumb:hover ~ .projTitle {
+    color: blue;
+} */
+
+.projThumb video{
+    width: 100vw;
+    height: auto;
+}
+
+.bodyText{
+    color: rgb(150, 150, 150);
+    width: 35vw;
+    height: auto;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow-y: scroll;
+
+    font-size: 21px;
+}
+
+.imgCont{
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    white-space: nowrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    position: sticky;
+    top: 0px;
+}
+
+.imgCont::-webkit-scrollbar {
+    display: none;
+}
+
+.bodyText::-webkit-scrollbar {
+    display: none;
+}
+
+.imgCont img{
+    padding: 5px;
+    /* height: 100%; */
+}
+
+.imgCont video{
+    padding: 5px;
+    /* height: 100%; */
+}
+
+.contentCont{
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    /* padding-top: 100px; */
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    width: 100vw;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.backButton{
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+}
+
+.additionalInfo, #miscDesc{
+    color: rgb(80, 80, 80);
+}
+
+.bigContMisc{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.contentContMisc{
+    display: flex;
+    /* position: fixed; */
+    flex-direction: row;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    height: 94vh;
+    /* width: auto; */
+    width: 500vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.contentContMisc::-webkit-scrollbar {
+    display: none;
+}
+
+.projMisc{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: auto;
+
+    /* overflow-x: scroll; */
+}
+
+/* .imgMiscCont{
+    height: 75vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+} */
+
+.imgMiscCont{
+    /* height: 75vh; */
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* flex-wrap: wrap; */
+    /* object-fit: cover; */
+}
+
+.imgMiscCont::-webkit-scrollbar {
+    display: none;
+}
+
+.imgMiscCont img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.textMisc{
+    width: auto;
+    height: 35vh;
+    color: rgb(150, 150, 150);
+    padding: 1vw;
+}
+
+
+
+
+/* misc-draft */
+.gridCont{
+    width: 100vw;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    bottom: 0;
+}
+
+.gridCont img{
+    width: 20vw;
+    /* height: 20vh; */
+    object-fit: contain;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .contentCont{
+        flex-direction: column;
+        justify-content: center;
+        height: 95vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+    }
+
+    .imgCont{
+        flex-direction: row;
+        height: 40vh;
+        width: 100vw;
+        overflow-y: hidden;
+        
+    }
+    .imgCont img{
+        /* width: 100%;
+        height: 100%; */
+        height: 100%;
+        object-fit: contain;
+        padding: 5px;
+    }
+
+    .bodyText{
+        padding: 20px;
+        width: 93vw;
+        height: 60vh;
+        padding-bottom: 50px;
+        overflow-x: hidden;
+        /* justify-content: center; */
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .contentContMisc{
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    .imgMiscCont{
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .imgMiscCont img{
+        width: 100%;
+        height: auto;
+    }
+
+    .textMisc{
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    /* .imgMisc{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    } */
+
+    #pfp{
+        width: 30vw;
+        height: auto;
+    }
+  }
